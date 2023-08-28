@@ -1,0 +1,14 @@
+body{
+    background-image: url('https://1.bp.blogspot.com/-O_Q8hGfC0gE/VzdnZIITlII/AAAAAAAAF5I/Nhf2EceSFwsRSM9RyD9pWhXYSPyyUk5-QCLcB/s1600/Diapositiva1.PNG');
+}
+h2{
+    color: rgb(72, 182, 9);
+    text-shadow: 3px 3px 5px #ee9595;
+    /* display: inline-block; */
+    background: rgb(198, 204, 204);
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin: 10px auto;
+    text-align: center;
+    
+}
