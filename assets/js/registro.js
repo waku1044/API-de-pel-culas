@@ -6,7 +6,7 @@ const $email = document.querySelector('[data-email]');
 const $checkbox = document.getElementById('gridCheck');
 
 $btn_registro.addEventListener('click',handleUser);
-
+$usuario.focus();
 const dataUsuario = {
     id:'',
     usuario : '',

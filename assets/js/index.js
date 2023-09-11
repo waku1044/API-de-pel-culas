@@ -1,4 +1,5 @@
-import cargarPeliculas from '../server/server.js';
+import {service} from '../server/server.js';
 
-cargarPeliculas()
 
+
+service.cargarPeliculas(1)

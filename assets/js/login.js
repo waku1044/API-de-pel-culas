@@ -4,6 +4,8 @@ let usuarioRegistrado = localStorage.getItem('usuario');
 let passwordRegistrado = localStorage.getItem('password');
 let btn_entrar = document.querySelector('[data-entrar]');
 
+$usuario.focus();
+
 function validarRegistro(e){
     e.preventDefault();
     
