@@ -34,4 +34,4 @@ $btn_siguiente.addEventListener("click", siguiente);
 $btn_anterior.addEventListener("click", anterior);
 
 
-service.cargarPeliculas();
+service.cargarPeliculas(count);

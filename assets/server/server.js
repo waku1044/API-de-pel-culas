@@ -3,24 +3,24 @@
 // Mostrar las policulas populares
 
 const cargarPeliculas = async (count) => {
-  let article = document.querySelector("[data-article]");
-  let template = '';
-  const response = await fetch(
+  const article = document.querySelector('[data-article]')
+let template ='';
+  return fetch(
     `https://api.themoviedb.org/3/movie/popular?api_key=da48657c7b1251891162e15cb4d8fc8f&language=es-ES&page=${count}`
-    );
-    const data = await response.json();
-  data.results.forEach((pelicula) => {
-    template += `<div class="card" style="width: 18rem;">
-      <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top" alt="${pelicula.title}">
-      <div class="card-body overflow-auto">
-      <h5 class="card-title">${pelicula.title}</h5>
-      <p><b>${pelicula.release_date.slice(0,4)
-      }</b></p>
-      <a href='./assets/pages/pelicula.html?id=${pelicula.id}' target='_blank' class='btn btn-primary'>Ver mas</a>
-      </div>
-      </div>`
-    })
-    article.innerHTML = template;
+    )
+    .then(response=>response.json())
+    .then(data=>data.results.forEach((pelicula) => {
+      template += `<div class="card" style="width: 18rem;">
+        <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top" alt="${pelicula.title}">
+        <div class="card-body overflow-auto">
+        <h5 class="card-title">${pelicula.title}</h5>
+        <p><b>${pelicula.release_date.slice(0,4)
+        }</b></p>
+        <a href='./pelicula.html?id=${pelicula.id}' target='_blank' class='btn btn-primary'>Ver mas</a>
+        </div>
+        </div>`
+        article.innerHTML = template;
+      }))
 };
 
 // Muestra pelicula seleccionada por id
