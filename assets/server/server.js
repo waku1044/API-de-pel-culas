@@ -3,7 +3,7 @@
 // Mostrar las policulas populares
 
 const cargarPeliculas = async (count) => {
-  const article = document.querySelector("#article");
+  let article = document.querySelector("[data-article]");
   let template = '';
   const response = await fetch(
     `https://api.themoviedb.org/3/movie/popular?api_key=da48657c7b1251891162e15cb4d8fc8f&language=es-ES&page=${count}`
@@ -19,7 +19,6 @@ const cargarPeliculas = async (count) => {
       <a href='./assets/pages/pelicula.html?id=${pelicula.id}' target='_blank' class='btn btn-primary'>Ver mas</a>
       </div>
       </div>`
-      console.log(pelicula)
     })
     article.innerHTML = template;
 };
@@ -27,10 +26,18 @@ const cargarPeliculas = async (count) => {
 // Muestra pelicula seleccionada por id
 
 const peliculaPorId = async (id) => {
-  const response = await fetch(`
-  https://api.themoviedb.org/3/movie/?api_key=da48657c7b1251891162e15cb4d8fc8f&language=es-ES/${id}?`);
-  return await response.json();
-};
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkYTQ4NjU3YzdiMTI1MTg5MTE2MmUxNWNiNGQ4ZmM4ZiIsInN1YiI6IjYyZTUyYjVmMWJmMjY2MDA2MDJjZDU1ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c3ZANy79T45EZhluE4qBRm9iZ9dnKIwb4dtNi1woduM'
+    }
+    
+  };
+  const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=es-ES`, options);
+  return await res.json();
+  
+  };
 
 export const service = {
   cargarPeliculas,
