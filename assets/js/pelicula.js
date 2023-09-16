@@ -8,10 +8,12 @@ console.log('url.searchParams.get(id): '+id)
 
 service.peliculaPorId(id)
 .then(pelicula =>{
-    let article = document.querySelector('[data-article]')
-   let  template = `<div class="card mb-3 bg-warning mx-auto w-50">
+    let article = document.querySelector('[data-article]');
+   let  template = `<div class=" mb-3 p-3 bg-warning mx-auto row">
+   <div class='col-12 col-md-6'>
    <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top mx-auto" alt="${pelicula.title}">
-   <div class="card-body">
+   </div>
+   <div class="pt-5 col-12 col-md-6">
      <h5 class="card-title">${pelicula.title}</h5>
      <p>${pelicula.release_date
      }</p>
