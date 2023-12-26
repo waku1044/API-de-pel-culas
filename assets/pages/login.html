@@ -1,34 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/login.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/login.css" />
     <title>Login</title>
-</head>
-<body >
-  <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg bg-body-tertiary"
+        data-bs-theme="dark"
+      >
         <div class="container-fluid d-flex justify-space-around">
           <div>
             <a class="navbar-brand" href="#">Cyrak-Movie</a>
           </div>
           <div>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarScroll"
+              aria-controls="navbarScroll"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
-              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <ul
+                class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+                style="--bs-scroll-height: 100px"
+              >
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../../index.html">Inicio</a>
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="../../index.html"
+                    >Inicio</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="./login.html">Entrar</a>
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="./login.html"
+                    >Entrar</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./registro.html" aria-disabled="true">Registrate</a>
+                  <a
+                    class="nav-link"
+                    href="./registro.html"
+                    aria-disabled="true"
+                    >Registrate</a
+                  >
                 </li>
               </ul>
               <!-- <form class="d-flex" role="search">
@@ -39,28 +72,53 @@
           </div>
         </div>
       </nav>
-</header>
-    <div class="container" >
-      
-        <h2 class="mx-auto">Bienvenido a Cyrak-Movie</h2>
-        <form class="row g-3 mt-5 w-75 mx-auto my-auto pb-4 form">
-            <div class="col-md-12">
-              <!-- <label for="inputUsuario" class="form-label">Usuario</label> -->
-              <input type="text" class="form-control" id="inputUsuario" placeholder="Usuario" data-usuario required>
-            </div>
-            <div class="col-md-12">
-              <!-- <label for="inputPassword" class="form-label">Password</label> -->
-              <input type="password" class="form-control" id="inputPassword" placeholder="Password" data-password required>
-            </div>
-            <div class="col-12 d-flex justify-content-center">
-              <button type="submit" class="btn btn-success w-50" data-entrar>Entrar</button>
-            </div>
-            <div class="col-12 d-flex justify-content-center">
-              <a href="../../assets/pages/registro.html" class="link-underline link-underline-opacity-0 px-3 rounded">No tengo cuenta.</a>
-            </div>
-          </form>
+    </header>
+
+    <div class="container">
+      <h2 class="mx-auto">Bienvenido a Cyrak-Movie</h2>
+      <form class="row g-3 mt-5 w-50 mx-auto my-auto pb-4 form p-5 rounded">
+        <div class="col-md-12">
+          <!-- <label for="inputUsuario" class="form-label">Usuario</label> -->
+          <input
+            type="text"
+            class="form-control"
+            id="inputUsuario"
+            placeholder="Usuario"
+            data-usuario
+            required
+          />
+        </div>
+        <div class="col-md-12">
+          <!-- <label for="inputPassword" class="form-label">Password</label> -->
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword"
+            placeholder="Password"
+            data-password
+            required
+          />
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+          <button type="submit" class="btn btn-success w-50" data-entrar>
+            Entrar
+          </button>
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+          <a
+            href="../../assets/pages/registro.html"
+            class="link-underline link-underline-opacity-0 px-3 rounded"
+            >No tengo cuenta.</a
+          >
+        </div>
+      </form>
     </div>
-    <script src="../js/login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-</body>
+    <dialog data-modal></dialog>
+    <script type="module" src="../js/login.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -1,3 +1,5 @@
+import  popap  from "./modal.js";
+
 let $usuario = document.querySelector('#inputUsuario');
 let $password = document.querySelector('#inputPassword');
 let usuarioRegistrado = localStorage.getItem('usuario');
@@ -10,10 +12,11 @@ function validarRegistro(e){
     e.preventDefault();
     
     if($usuario.value == usuarioRegistrado && $password.value == passwordRegistrado){
-        alert('Bienvenido a Cyrak-Movie');
-        window.location.href = './home.html';
+        popap('Bienvenido a Cyrak-Movie','exit');
+        setTimeout(()=>{window.location.href = './home.html';},3000)
+        
     }else{
-        alert('Usuario / Password.\nNo se encuentra en nuestra base de datos.')
+        popap(`Usuario / Password.<br>No se encuentra en nuestra base de datos.`, 'danger')
     }
 }
 btn_entrar.addEventListener('click',validarRegistro);

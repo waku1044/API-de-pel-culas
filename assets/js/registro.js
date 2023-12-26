@@ -1,3 +1,5 @@
+import  popap   from './modal.js';
+
 const $usuario = document.querySelector('[data-usuario]');
 const $password = document.querySelector('[data-password]');
 const $btn_registro = document.querySelector('[data-registrando]')
@@ -15,6 +17,8 @@ const dataUsuario = {
     genero:''
 
 }
+
+
 
 function obtenerValorGenero() {
     let opcion = document.getElementById("inputGenero");
@@ -47,36 +51,40 @@ function validarEmail(){
 }
 function validarCampos(){
     let esCorrecto = true;
-    let msj = 'Corrija los siguientes campos: \n';
+    let msj = 'Corrija los siguientes campos: <br>';
     if(!validarUsuario()){
-        msj += '- Usuario \n';
+        msj += '- Usuario <br>';
         esCorrecto = false;
     }
     if(!validarPassword()){
-        msj += '- Password / repetir Password \n';
+        msj += '- Password / repetir Password <br>';
         esCorrecto = false;
     }
     if(!validarEmail()){
-        msj += '- Email \n';
+        msj += '- Email <br>';
         esCorrecto = false;
     }
     if(!$checkbox.checked){
-        msj += '- Confirmacion de los datos ingresados. \n';
+        msj += '- Confirmacion de los datos ingresados.<br>';
         esCorrecto = false;
     }
     if(!esCorrecto){
-        alert(msj);
+        popap(msj,'danger');
+        
     }else{
-        alert('Los datos ingresados en el formulario fueron exitosos.')
-        dataUsuario.usuario = $usuario.value;
-        localStorage.setItem('usuario',$usuario.value);
-        dataUsuario.password = $password.value;
-        localStorage.setItem('password',$password.value)
-        dataUsuario.email = $email.value;
-        localStorage.setItem('email',$email.value)
-        dataUsuario.genero = obtenerValorGenero();
-        localStorage.setItem('genero',dataUsuario.genero)
-        window.location.href = './login.html'
+        popap('Los datos ingresados en el formulario fueron exitosos.','exit')
+        setTimeout(()=>{
+            dataUsuario.usuario = $usuario.value;
+            localStorage.setItem('usuario',$usuario.value);
+            dataUsuario.password = $password.value;
+            localStorage.setItem('password',$password.value)
+            dataUsuario.email = $email.value;
+            localStorage.setItem('email',$email.value)
+            dataUsuario.genero = obtenerValorGenero();
+            localStorage.setItem('genero',dataUsuario.genero)
+            window.location.href = './login.html'
+            
+        },3000)
 }
 }
 function handleUser(e){

@@ -42,9 +42,15 @@ const peliculaPorId = async (id) => {
     return fetch('https://api.themoviedb.org/3/genre/movie/list?language=es-ES',options)
     .then(response=>response.json())
   }
+  const generoPorId = (id)=>{
+    return fetch(`https://api.themoviedb.org/3/genre/${id}/movies?language=es-ES`,options)
+    .then(response=>response.json())
+    
+  }
 
 export const service = {
   cargarPeliculas,
   peliculaPorId,
-  muestraDeGenero
+  muestraDeGenero,
+  generoPorId
 };

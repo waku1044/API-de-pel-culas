@@ -15,3 +15,21 @@ h2{
 .form{
     background: #ccc;
 }
+.warning{
+    background: rgba(229, 253, 13, 0.7);
+    color: brown;
+    border-radius: 30px;
+    padding: 20px;
+}
+.danger{
+    background: rgba(253, 13, 13, 0.7);
+    color: rgb(10, 10, 10);
+    border-radius: 30px;
+    padding: 20px;
+}
+.exit{
+    color: #ff9;
+    background: forestgreen;
+    border-radius: 30px;
+    padding: 20px;
+}
