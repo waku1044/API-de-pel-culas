@@ -14,6 +14,7 @@ h2{
 }
 .form{
     background: #ccc;
+    width: 75%;
 }
 .warning{
     background: rgba(229, 253, 13, 0.7);
@@ -32,4 +33,9 @@ h2{
     background: forestgreen;
     border-radius: 30px;
     padding: 20px;
+}
+@media screen and (min-width: 600px) {
+    .form{
+        width: 50%;
+    }
 }
