@@ -12,6 +12,23 @@ h2{
     text-align: center;
     
 }
+
+.eye{
+    position: absolute;
+    left: 80%;
+    top: 8px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+}
+.eyeClose{
+    position: absolute;
+    
+    top: 8px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+}
 .form{
     background: #ccc;
     width: 75%;
@@ -37,5 +54,10 @@ h2{
 @media screen and (min-width: 600px) {
     .form{
         width: 50%;
+    }
+}
+@media screen and (min-width: 795px) {
+    .eye{
+        left: 90%;
     }
 }
