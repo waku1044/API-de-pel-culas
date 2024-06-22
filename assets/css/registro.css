@@ -2,8 +2,20 @@ body{
     background-image:url('https://motarvi.com/php_security/registro/img/registro-nuevo.png');
     background-size: 100% 100%;
 }
+body::before{
+    content: '';
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 10px);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
 form{
-    width: 30rem;
+    min-width: 10rem;
+   
+    max-width: 30rem;
     background:rgb(163, 165, 165);
 }
 .warning{

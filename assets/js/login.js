@@ -1,5 +1,6 @@
 import  popap  from "./modal.js";
 
+
 let $usuario = document.querySelector('#inputUsuario');
 let $password = document.querySelector('#inputPassword');
 let usuarioRegistrado = localStorage.getItem('usuario');
