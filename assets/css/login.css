@@ -50,30 +50,7 @@ h2{
     border-radius: 30px;
     padding: 20px;
 }
-.danger{
-    background: rgb(253, 13, 13);
-    color: rgb(10, 10, 10);
-    border-radius: 30px;
-    padding: 20px;
-    /* width: 20rem; */
-}
-.danger::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.4);
-    z-index: -1;
-    border-radius: 30px;
-}
-.exit{
-    color: #ff9;
-    background: forestgreen;
-    border-radius: 30px;
-    padding: 20px;
-}
+
 @media screen and (min-width: 600px) {
     .form{
         width: 50%;

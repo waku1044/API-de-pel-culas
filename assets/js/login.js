@@ -24,11 +24,11 @@ function validarRegistro(e){
     e.preventDefault();
     
     if($usuario.value == usuarioRegistrado && $password.value == passwordRegistrado){
-        popap('Bienvenido a Cyrak-Movie','exit');
+        popap('Bienvenido a Cyrak-Movie','bg-success');
         setTimeout(()=>{window.location.href = './home.html';},3000)
         
     }else{
-        popap(`Usuario / Password.<br>No se encuentra en nuestra base de datos.`, 'danger')
+        popap(`Usuario / Password.<br>No se encuentra en nuestra base de datos.`, 'bg-danger')
     }
 }
 btn_entrar.addEventListener('click',validarRegistro);

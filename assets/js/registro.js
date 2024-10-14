@@ -69,10 +69,10 @@ function validarCampos(){
         esCorrecto = false;
     }
     if(!esCorrecto){
-        popap(msj,'danger');
+        popap(msj,'bg-danger');
         
     }else{
-        popap('Los datos ingresados en el formulario fueron exitosos.','exit')
+        popap('Los datos ingresados en el formulario fueron exitosos.','bg-success')
         setTimeout(()=>{
             dataUsuario.usuario = $usuario.value;
             localStorage.setItem('usuario',$usuario.value);
