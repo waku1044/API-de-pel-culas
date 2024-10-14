@@ -21,7 +21,7 @@ const cargarPeliculas = (pageNumber) => {
       let template = '';
       data.results.forEach((pelicula) => {
         template += `<div class="card" style="width: 18rem;">
-          <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top" alt="${pelicula.title}">
+          <img  data-src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top lazy" alt="${pelicula.title}">
           <div class="card-body overflow-auto">
             <h5 class="card-title">${pelicula.title}</h5>
             <p><b>${pelicula.release_date.slice(0, 4)}</b></p>
@@ -31,7 +31,37 @@ const cargarPeliculas = (pageNumber) => {
       });
 
       article.innerHTML = template;
+
+        // Mover el observer aquí
+        obtimisaImg();
+        
     });
+};
+
+ function obtimisaImg() {
+  const lazyImages = document.querySelectorAll('.lazy');
+
+  const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+  };
+
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            console.log(entry)
+              const img = entry.target;
+              img.src = img.getAttribute('data-src');
+              img.classList.add('loaded');
+              observer.unobserve(img);
+          }
+      });
+  }, options);
+
+  lazyImages.forEach(image => {
+      imageObserver.observe(image);
+  });
 };
 
 cargarPeliculas(count);
