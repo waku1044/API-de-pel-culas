@@ -8,6 +8,7 @@ let count = 1;
 const $btn_siguiente = document.querySelector("[data-siguiente]");
 const $btn_anterior = document.querySelector("[data-anterior]");
 const links = document.querySelector('.link');
+const $input_search = document.querySelector('[data-search]');
 
 $count.innerText = count;
 let lista = '';
@@ -17,9 +18,30 @@ service.muestraDeGenero()
     links.innerHTML = lista;
   }))
 
-  service.generoPorId(18) 
-  .then(genero => console.log(genero))
+  // service.generoPorId(18) 
+  // .then(genero => console.log(genero))
 const article = document.querySelector('[data-article]');
+
+// Busqueda
+
+$input_search.addEventListener("keyup", async(e) => {
+  if (e.key === "Enter") {
+    let resultado = await service.buscarPelicula($input_search.value)
+    let template = '';
+    resultado.results.forEach((pelicula) => {
+      template += `<div class="card" style="width: 18rem;">
+      <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class="card-img-top h-75" alt="${pelicula.title}">
+      <div class="card-body overflow-auto">
+        <h5 class="card-title">${pelicula.title}</h5>
+        <p><b>${pelicula.release_date.slice(0, 4)}</b></p>
+        <a href='./pelicula.html?id=${pelicula.id}' target='_blank' class='btn btn-primary'>Ver mas</a>
+      </div>
+    </div>`;
+    })
+    article.innerHTML = template;
+}
+})
+
 
 const cargarPeliculas = (pageNumber) => {
   service.cargarPeliculas(pageNumber)

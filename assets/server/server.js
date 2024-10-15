@@ -37,6 +37,12 @@ const peliculaPorId = async (id) => {
   
   };
 
+  const buscarPelicula = async (query) => {
+    const res = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&language=es-ES`, options);
+    return await res.json();
+    
+    };
+
   // Muestra genero y id 
   const muestraDeGenero = ()=>{
     return fetch('https://api.themoviedb.org/3/genre/movie/list?language=es-ES',options)
@@ -52,5 +58,6 @@ export const service = {
   cargarPeliculas,
   peliculaPorId,
   muestraDeGenero,
-  generoPorId
+  generoPorId,
+  buscarPelicula
 };

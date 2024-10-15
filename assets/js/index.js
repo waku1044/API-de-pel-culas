@@ -1,4 +1,5 @@
 import { service } from "../server/server.js";
+import popap  from "./modal.js";
 const $count = document.querySelector("[data-count]");
 let count = 1;
 const $btn_siguiente = document.querySelector("[data-siguiente]");
@@ -38,6 +39,10 @@ const cargarPeliculas = (pageNumber) => {
     });
 };
 
+
+
+
+
  function obtimisaImg() {
   const lazyImages = document.querySelectorAll('.lazy');
 
@@ -50,7 +55,7 @@ const cargarPeliculas = (pageNumber) => {
   const imageObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
-            console.log(entry)
+            
               const img = entry.target;
               img.src = img.getAttribute('data-src');
               img.classList.add('loaded');
