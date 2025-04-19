@@ -2,8 +2,12 @@ import { service } from "../server/server.js";
 
 let url = new URL(window.location);
 let id = url.searchParams.get("id");
+
 console.log("new URL(windowLocation): " + url);
 console.log("url.searchParams.get(id): " + id);
+
+
+
 
 service.peliculaPorId(id).then((pelicula) => {
   

@@ -1,10 +1,12 @@
 import { service } from "../server/server.js";
-import popap  from "./modal.js";
+import  popap   from './modal.js';
 const $count = document.querySelector("[data-count]");
 let count = 1;
 const $btn_siguiente = document.querySelector("[data-siguiente]");
 const $btn_anterior = document.querySelector("[data-anterior]");
 const links = document.querySelector('.link');
+const $link_regis  = document.querySelectorAll('.regis')
+const article = document.querySelector('[data-article]');
 
 $count.innerText = count;
 let lista = '';
@@ -14,7 +16,9 @@ service.muestraDeGenero()
     links.innerHTML = lista;
   }))
 
-const article = document.querySelector('[data-article]');
+$link_regis.forEach(link=>{
+  link.addEventListener('click',()=>alert('Tienes que registrate'))
+})
 
 const cargarPeliculas = (pageNumber) => {
   service.cargarPeliculas(pageNumber)

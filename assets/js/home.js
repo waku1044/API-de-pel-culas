@@ -4,7 +4,7 @@ let usuarioRegistrado = localStorage.getItem('usuario');
 document.querySelector('[data-usuario-registrado]').innerText = usuarioRegistrado;
 
 const $count = document.querySelector("[data-count]");
-let count = 1;
+const count = 1;
 const $btn_siguiente = document.querySelector("[data-siguiente]");
 const $btn_anterior = document.querySelector("[data-anterior]");
 const links = document.querySelector('.link');
